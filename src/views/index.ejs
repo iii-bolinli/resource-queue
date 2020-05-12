@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>物資發送平台</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="ui container">
+      <h2 class="ui header">訂單列表</h2>
+      <table class="ui celled table">
+        <thead>
+          <tr>
+            <th>訂單序號</th>
+            <th>取貨點</th>
+            <th>訂單內容</th>
+            <th>通知時間</th>
+            <th>取貨時間</th>
+            <th>建立時間</th>
+            <th>有效</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% orders.forEach(function(order){ %>
+          <tr>
+            <td><%= order.serial %></td>
+            <td><%= order.location.name %></td>
+            <td>
+              <ul>
+                <% order.amounts.forEach(function(amount){ %>
+                <li>
+                  <% if (amount.supply.category === "adult") { %> 成人 <% } else
+                  { %> 兒童 <% } %> * <%= amount.value %> 片
+                </li>
+                <% }); %>
+              </ul>
+            </td>
+            <td><%= moment(order.deliveredAt).format('LLLL') %></td>
+            <td><%= moment(order.pickupAt).format('LLLL') %></td>
+            <td><%= moment(order.createdAt).format('LLLL') %></td>
+            <td>
+              <% if (order.active) { %>
+              <i class="check icon"></i>
+              <% } %>
+            </td>
+          </tr>
+          <% }); %>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

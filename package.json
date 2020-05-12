@@ -1,0 +1,51 @@
+{
+  "name": "mask-queue",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run build:live",
+    "build:live": "nodemon --exec ./node_modules/.bin/ts-node -- ./src/index.ts",
+    "build": "rm -rf dist && tsc",
+    "copy-views": "copyfiles -u 1 ./src/views/*.ejs ./dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@gitlab.ideas.iii.org.tw:10022/iii/mask-queue.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "csv-parser": "^2.3.2",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.0.1",
+    "encoding": "^0.1.12",
+    "koa": "^2.11.0",
+    "koa-async-validator": "^0.4.1",
+    "koa-body": "^4.1.1",
+    "koa-body-clean": "^1.0.0",
+    "koa-helmet": "^5.2.0",
+    "koa-router": "^8.0.7",
+    "koa-static": "^5.0.0",
+    "koa-views": "^6.2.1",
+    "moment": "^2.24.0",
+    "moment-timezone": "^0.5.27",
+    "neat-csv": "^5.1.0",
+    "pg": "^7.3.0",
+    "reflect-metadata": "^0.1.10",
+    "typeorm": "^0.2.16",
+    "winston": "^3.2.1"
+  },
+  "devDependencies": {
+    "@types/dotenv": "^8.2.0",
+    "@types/koa": "^2.11.0",
+    "@types/koa-helmet": "^3.1.2",
+    "@types/koa-joi-router": "^5.2.3",
+    "@types/node": "^13.7.0",
+    "@types/pg": "^7.14.1",
+    "nodemon": "^2.0.2",
+    "ts-node": "^3.3.0",
+    "typescript": "^3.7.5"
+  }
+}
