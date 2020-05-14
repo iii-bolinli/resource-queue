@@ -44,3 +44,7 @@ npm install -D typescript
 ### Run Docker command
 
     docker-compose up --build -d
+
+## API Document
+
+[Postman document here](https://documenter.getpostman.com/view/189940/SWTEdcDV?version=latest)

@@ -7,3 +7,7 @@ temp/
 dist/
 error.log
 src/uploads/
+.VSCodeCounter/details.md
+.VSCodeCounter/results.csv
+.VSCodeCounter/results.md
+.VSCodeCounter/results.txt
