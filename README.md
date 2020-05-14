@@ -9,7 +9,7 @@ Resource distribution queue system api server, using Koa2, PostgreSQL and Docker
 - Clone the repository
 
 ```
-git clone --depth=1 https://github.com/jd2566/zeit-bot.git <project_name>
+git clone --depth=1 https://github.com/iii-bolinli/resource-queue.git <project_name>
 ```
 
 - Install dependencies
